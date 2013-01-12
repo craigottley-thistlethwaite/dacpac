@@ -29,7 +29,7 @@ namespace dacpac.util
         {
             /// OpenFileDialog
             OpenFileDialog dialog = new OpenFileDialog();
-            
+
             dialog.DefaultExt = ".dacpac";
             dialog.Filter = "Dacpac Files (*.dacpac)|*.dacpac|Bacpac Files (*.bacpac)|*.bacpac|All Files (*.*)|*.*";
 
@@ -38,9 +38,21 @@ namespace dacpac.util
             if (result == true)
             {
                 string filename = dialog.FileName;
-                MessageBox.Show(filename.ToString());
+
+                TreeViewItem root = new TreeViewItem();
+                root.Header = filename.ToString();
+
+                SourceTreeView.Items.Add(root);
             }
 
+        }
+
+        private void DeleteNodeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SourceTreeView.SelectedItem != null)
+            {
+                SourceTreeView.Items.RemoveAt(SourceTreeView.Items.IndexOf(SourceTreeView.SelectedItem));
+            }
         }
     }
 }

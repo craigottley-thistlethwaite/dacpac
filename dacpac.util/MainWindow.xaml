@@ -3,19 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Dacpac Utility" Height="350" Width="525">
     <Grid Name="MainGrid">
-
-        <Button Height="24" Width="24" 
-                Name="AddFileButton" ToolTip="Add a dacpac or bacpac file..."
-                Click="AddFileButton_Click"  
-                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,12,0,0">
-            <Button.Background>
-                <ImageBrush ImageSource="/dacpac.util;component/Resources/077_AddFile.ico" Stretch="Fill" TileMode="None" />
-            </Button.Background>
-        </Button>
-        <!--<StackPanel Height="100" HorizontalAlignment="Left" Margin="12,12,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="68">
-            <Button Height="25" Name="Button" Width="25" />
-            <Image Source="C:\Code\github\dacpac\img\VS2010ImageLibrary\Actions\ico_format\WinVista\077_AddFile.ico" ImageFailed="Image_ImageFailed" Height="25" Width="25
-            " />
-        </StackPanel>-->
+      
+        <TreeView Margin="52,12,220,12" Name="SourceTreeView"></TreeView>
+        <StackPanel Height="287" HorizontalAlignment="Left" Margin="16,12,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="30">
+            <Button Height="24" Width="24" Name="AddFileButton" ToolTip="Add a dacpac or bacpac file..." Click="AddFileButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/dacpac.util;component/Resources/077_AddFile.ico" Stretch="Fill" TileMode="None" />
+                </Button.Background>
+            </Button>
+            <Button Height="24" Width="24" Name="DeleteNodeButton" ToolTip="Delete a dacpac or bacpac file..." Click="DeleteNodeButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/dacpac.util;component/Resources/delete.ico" />
+                </Button.Background>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
